@@ -1,6 +1,10 @@
 # Unzip Tool
 
-This project provides a Node.js script for unzipping files from a specified directory into a target directory. It supports two versions:
+This project provides a Node.js script for unzipping files from a specified directory into a target directory. This tool was created to automate the process of extracting files, particularly when dealing with large volumes of data.
+
+A common scenario where this tool is useful is when downloading multiple files from the internet, such as from Google Drive. These files are often compressed into multiple zip archives. This script simplifies the task of unzipping each archive and organizing the files into a designated directory.
+
+It supports two versions:
 
 1. **`unzip_files.js`**: Uses `.env` values for directory paths.
 2. **`unzip_files_cm.js`**: Uses command-line arguments for directory paths.
