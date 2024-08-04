@@ -22,7 +22,7 @@ It supports three versions:
 3. If you want to use the Electron UI, navigate to the Electron directory and install additional dependencies:
 
    ```bash
-   cd electron
+   cd electron-ui
    npm install
    ```
 
@@ -85,7 +85,7 @@ The Electron UI provides a graphical interface to run the unzip script and view 
 1. Navigate to the Electron directory:
 
    ```bash
-   cd electron-unzip-tool
+   cd electron-ui
    ```
 
 2. Install Electron dependencies:
