@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unzip Tool</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+      }
+      .output {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        background: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Unzip Tool</h1>
+      <form id="unzipForm">
+        <label for="zipDir">Zip Directory:</label>
+        <input type="text" id="zipDir" required />
+        <br />
+        <label for="destDir">Destination Directory:</label>
+        <input type="text" id="destDir" required />
+        <br />
+        <button type="submit">Unzip Files</button>
+      </form>
+      <div class="output" id="output"></div>
+    </div>
+    <script>
+      document.getElementById('unzipForm').addEventListener('submit', async e => {
+        e.preventDefault()
+        const zipDir = document.getElementById('zipDir').value
+        const destDir = document.getElementById('destDir').value
+        const outputElement = document.getElementById('output')
+
+        outputElement.textContent = 'Running script...'
+
+        try {
+          const result = await window.api.runScript(zipDir, destDir)
+          outputElement.textContent = `Output:\n${result}`
+        } catch (error) {
+          outputElement.textContent = `Error:\n${error}`
+        }
+      })
+    </script>
+  </body>
+</html>
